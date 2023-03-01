@@ -1,5 +1,4 @@
-use dotenv;
-use webhook::client::{WebhookClient, WebhookResult};
+use webhook::client::{ WebhookClient, WebhookResult };
 
 #[tokio::main]
 async fn main() -> WebhookResult<()> {
@@ -12,9 +11,9 @@ async fn main() -> WebhookResult<()> {
         let webhook_url = dotenv::var("WEBHOOK_URL")?;
         let client = WebhookClient::new(&webhook_url);
 
-        client.send(|message| message.
-            content("Website is down!")
-            .username("Website status")).await?;
+        client.send(|message|
+            message.content("Website is down!").username("Website status")
+        ).await?;
     }
 
     Ok(())
