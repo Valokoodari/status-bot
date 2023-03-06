@@ -16,7 +16,7 @@ To run the website status check periodically (on macOS or Linux) I recommend usi
 configuration with `crontab -e`. I personally run the check every five minutes so I have the following line in the
 configuration:
 ```shell
-*/5 * * * * cd </path/to/executable> && ./status-bot
+*/5 * * * * cd </path/to/folder> && ./status-bot
 ```
 
 > **Note**  
